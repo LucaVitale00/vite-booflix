@@ -14,22 +14,24 @@
   
 </template>
 <script>
-import {store} from '../store'
+import {store, fetchMovies} from '../store'
 export default {
   data() {
     return {
       store,
-      searchText : [],
+      searchText : "",
     }
   },
   emits : ["search"],
-  computed : {
+  methods : {
     onSearchClick () {
-      this.$emit("search", search);
+      this.store.searchText = this.searchText,
+
+      fetchMovies();
     },
-    onSearchText () {
-      this.store.searchText = this.searchText
-    }
+    
+      
+    
   }
 }
 </script>
