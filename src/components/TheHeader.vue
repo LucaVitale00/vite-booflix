@@ -14,7 +14,7 @@
   
 </template>
 <script>
-import {store, fetchMovies} from '../store'
+import {store, fetchMovies, fetchTvSeries} from '../store'
 export default {
   data() {
     return {
@@ -22,12 +22,18 @@ export default {
       searchText : "",
     }
   },
-  emits : ["search"],
+  //emits : ["search"],
   methods : {
     onSearchClick () {
       this.store.searchText = this.searchText,
 
       fetchMovies();
+      fetchTvSeries();
+
+      this.store.show = true
+      if(this.store.searchText === "") {
+        this.store.loading = false
+      }
     },
     
       
