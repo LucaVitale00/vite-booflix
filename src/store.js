@@ -27,17 +27,23 @@ export function fetchMovies() {
   })
   .then((resp) => {
     console.log(resp.data.results);
-    store.movies = resp.data.results
+    store.movies = resp.data.results;
+
+    
     setTimeout(() => {
       store.loading = false
     }, 1000);
 
+    
+
   })
+  
   .catch((error) => {
   
     console.log("Codice errore: ", error.message + ' ' + error.name);
     setTimeout(() => {
       store.loading = false
+      
     }, 1000);
   })
 
