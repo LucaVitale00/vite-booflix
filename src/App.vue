@@ -24,8 +24,10 @@ export default {
   <Loader v-if="store.loading"></Loader>
   <TheHeader></TheHeader>
   <TheMain></TheMain>
+
 </template>
 
-<style scoped>
+<style>
+
 
 </style>

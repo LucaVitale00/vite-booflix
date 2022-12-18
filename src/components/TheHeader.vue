@@ -1,13 +1,14 @@
 <template>
   <section>
     <div class="container">
-      <h1 class="pt-4 text-center pb-4">Boolflix</h1>
+      <h1 class="pt-4 text-center text-danger pb-4">Boolflix</h1>
       <div class="row">
-        <div class="col-8 m-auto d-flex">
-          <input type="text" class="form-control" v-model="searchText">
-          <button class="btn btn-dark ms-2" @click="onSearchClick">Search</button>
+        <div class="col-8 m-auto ">
+          <form class="d-flex" @submit.prevent="onSearchClick">
+            <input type="text" class="form-control" v-model="searchText">
+            <button class="btn btn-dark ms-2">Search</button>
+          </form>
         </div>
-
       </div>
     </div>
   </section>
@@ -42,5 +43,9 @@ export default {
 }
 </script>
 <style lang="scss">
-  
+  section{
+    h1{
+      font-size: 70px;
+    }
+  }
 </style>

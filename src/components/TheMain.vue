@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container pb-5">
-      <h2 class=" py-4" v-if="store.show">films</h2>
+      <h2 class=" py-4 text-white" v-if="store.show">films</h2>
       <div class="row">
        <div v-for="(film, index) in store.movies" :key="index" class="col-2 d-flex flex-column  g-4">
          <div class="card position-relative">
@@ -17,7 +17,7 @@
        </div>
       </div>
 
-      <h2 class="py-4" v-if="store.show">Tv-Series</h2>
+      <h2 class="py-4 text-white" v-if="store.show">Tv-Series</h2>
       <div class="row">
        <div v-for="(series, index) in store.tvSeries" :key="index" class="col-2 d-flex flex-column g-4">
          <div class="card position-relative">
@@ -27,7 +27,7 @@
             <div>{{series.original_name}}</div>
             <div>{{series.overview}}</div>
             <div>{{series.original_language}}</div>
-            <div>{{series.vote_average}}</div>
+            <div>{{series.vote_average}} <span class="text-warning"><i class="fa-solid fa-star"></i></span></div>
           </div>
          </div>
        </div>
@@ -43,7 +43,6 @@ export default {
     return {
       store,
       
-      
     }
   },
   methods: {
@@ -52,12 +51,20 @@ export default {
 }
 </script>
 <style lang="scss">
+
+
+section{
+
+width: 100%;
+height: 100%;
+
 .card{
   overflow: hidden;
   img{
     z-index: 2;
     display: block;
     width: 100%;
+   
 }
 .pos-absol{
     position: absolute;
@@ -82,5 +89,5 @@ export default {
   
 };
 
-  
+}
 </style>
