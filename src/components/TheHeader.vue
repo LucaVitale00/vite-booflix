@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <h1 class="pt-4 text-center text-danger pb-4">Boolflix</h1>
+      <h1 class="pt-4 fw-bold text-center text-danger pb-4">BOOLFLIX</h1>
       <div class="row">
         <div class="col-8 m-auto ">
           <form class="d-flex" @submit.prevent="onSearchClick">
